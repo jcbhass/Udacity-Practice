@@ -16,18 +16,21 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 // Initialize the main project folder
-app.use(express.static('src/website'));
+app.use(express.static('src/client'));
 
 // Setup Server
 const port = 5000;
 //Spin up server
 const server = app.listen(port, listening);
 // or const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`)})
-//Callback to debug
 function listening() {
     console.log('server running');
     console.log(`running on localhost: ${port}`);
 };
+
+app.get('/', function (req, res) {
+    res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
+})
 
 // POST route
 app.post('/', function (req, res) {
