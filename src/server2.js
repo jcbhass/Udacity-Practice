@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 // Initialize the main project folder
-app.use(express.static('website'));
+app.use(express.static('src/website'));
 
 // Setup Server
-const port = 3000;
+const port = 5000;
 //Spin up server
 const server = app.listen(port, listening);
 // or const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`)})
