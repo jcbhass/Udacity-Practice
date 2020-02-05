@@ -5,7 +5,7 @@
   "main": "src/server/server.js",
   "scripts": {
     "start": "node src/server/server",
-    "dev": "nodemon src/server/server"
+    "build": "webpack"
   },
   "keywords": [
     "weather",
